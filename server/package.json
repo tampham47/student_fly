@@ -1,0 +1,10 @@
+{
+	"name": "sleep-server",
+	"private": true,
+	"dependencies": {
+		"express": "3.4.x",
+		"jade": "*",
+		"passport": "0.1.x",
+		"mongoose": "latest"
+	}
+}
