@@ -1,0 +1,23 @@
+doctype 5
+
+html(ng-app='student-fly')
+	head
+		meta(charset='UTF-8')
+		title
+			| Student fly
+
+		link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+	body
+		//- include login
+
+		main(ng-view)
+
+		script(src='/bower_components/jquery/dist/jquery.min.js')
+		script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.js')
+		script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-animate.min.js')
+		script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-resource.min.js')
+		script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-route.min.js')
+		script(src='bower_components/bootstrap/dist/js/bootstrap.min.js')
+
+		script(src='/scripts.js')
+		script(src='/templates.js')
