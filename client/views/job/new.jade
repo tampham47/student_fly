@@ -1,0 +1,44 @@
+.row
+	.col-md-9
+		//- h4
+		//- 	label.label.label-danger Việc làm tốt nhất
+		.page-header(style='margin-top:0px')
+			h2 {{title}}
+
+		.post
+			form.form(role='form', method='post')
+				.form-group
+					label(for='exampleInputEmail1') Tên bài viết
+					input#exampleInputEmail1.form-control(type='email', placeholder='Tên bài viết')
+				.form-group
+					label(for='exampleInputEmail1') Nội dung công việc
+					textarea.form-control(rows='7')
+				.form-group
+					label(for='exampleInputEmail1') Yêu cầu công việc
+					textarea.form-control(rows='7')
+				.form-group
+					label(for='exampleInputEmail1') Ngành nghề
+					input#exampleInputEmail1.form-control(type='email')
+				.form-group
+					label(for='exampleInputEmail1') Địa điểm làm việc
+					input#exampleInputEmail1.form-control(type='email')
+				.form-group
+					label(for='exampleInputEmail1') Mức lương
+					input#exampleInputEmail1.form-control(type='email')
+				.form-group
+					label(for='exampleInputEmail1') Vị trí tuyển dụng
+					input#exampleInputEmail1.form-control(type='email')
+				.form-group
+					label(for='exampleInputEmail1') Ngôn ngữ trình bày hồ sơ
+					input#exampleInputEmail1.form-control(type='email')
+				.form-group
+					button.btn.btn-success
+						i.glyphicon.glyphicon-plus
+						| Đăng tin tuyển dụng
+					a.btn.btn-default(href='#/job')
+						i.glyphicon.glyphicon-remove
+						| Hủy
+
+	.col-md-3
+		//- h4
+		//- 	label.label.label-info Nhà tuyển dụng hàng đầu

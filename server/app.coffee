@@ -14,18 +14,16 @@ app.use express.cookieParser()
 app.use express.session(secret: 'madoka')
 app.use passport.initialize()
 app.use passport.session()
-app.use logger
+
+require('./controllers')(app)
 
 # configure passport
-User = mongoose.model 'User'
-passport.use User.createStrategy()
-passport.serializeUser User.serializeUser()
-passport.deserializeUser User.deserializeUser()
+# User = mongoose.model 'User'
+# passport.use User.createStrategy()
+# passport.serializeUser User.serializeUser()
+# passport.deserializeUser User.deserializeUser()
 
-
-require('./routes')(app)
 mongoose.connect 'mongodb://localhost/student-fly'
-
 
 app.listen 3000
 console.log 'Listening on port 3000...'

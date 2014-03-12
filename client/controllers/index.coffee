@@ -4,8 +4,14 @@
 angular.module 'student-fly', [
 	'ngAnimate'
 	'ngRoute'
+	'ngResource'
+	'ngSanitize'
+
 	'student-fly.templates'
 	'student-fly.home'
-	'student-fly.blog'
 	'student-fly.user'
+
+	'student-fly.blog'
+	'student-fly.job'
+	'student-fly.research'
 ]

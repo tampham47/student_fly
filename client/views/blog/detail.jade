@@ -1,0 +1,49 @@
+.row
+	.col-md-9
+		.page-header(style='margin-top:0px')
+			h3 {{post.title}}
+			small Phạm minh tâm - {{post.modified | date:'MM/dd/yyyy @ h:mma'}}
+
+		.job-info(style='margin-top:20px')
+			div(ng-bind-html='post.content')
+
+		.comment
+			.media
+				a.pull-left(href='#')
+					img.media-object(width='50', height='50', src='../contents/images/green.png', alt='...')
+				.media-body
+					h5.media-heading
+						b Tâm Phạm
+						small 28/2/2014
+					span chuyện tình dưới mưa
+			.media
+				a.pull-left(href='#')
+					img.media-object(width='50', height='50', src='../contents/images/green.png', alt='...')
+				.media-body
+					h5.media-heading
+						b Tâm Phạm
+						small 28/2/2014
+					span chuyện tình dưới mưa
+			.media
+				a.pull-left(href='#')
+					img.media-object(width='50', height='50', src='../contents/images/green.png', alt='...')
+				.media-body
+					h5.media-heading
+						b Tâm Phạm
+						small 28/2/2014
+					span chuyện tình dưới mưa
+			.media
+				a.pull-left(href='#')
+					img.media-object(width='50', height='50', src='../contents/images/green.png', alt='...')
+				.media-body
+					h5.media-heading
+						b Tâm Phạm
+						small 28/2/2014
+					form(role='form')
+						.form-group
+							textarea#exampleInputEmail1.form-control(type='text', placeholder='Bình luận')
+							button.btn.btn-success.pull-right(style='margin-top:4px') Bình luận
+
+	.col-md-3
+		//- h4
+		//- 	label.label.label-success Nổi bật

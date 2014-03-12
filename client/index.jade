@@ -5,18 +5,105 @@ html(ng-app='student-fly')
 		meta(charset='UTF-8')
 		title
 			| Student fly
-
 		link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
-	body
+
+		//- medium-editor
+		link(rel='stylesheet',
+			href='bower_components/medium-editor/dist/css/medium-editor.css')
+		link(rel='stylesheet',
+			href='bower_components/medium-editor/dist/css/themes/default.css')
+
+		link(rel='stylesheet', href='/contents/studentfly.css')
+
+	body(style='padding-top:60px')
+
 		//- include login
 
-		main(ng-view)
+		div.row.clearfix
+			div.col-md-12.column
+				nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+					div.navbar-header
+						button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+							span.sr-only Toggle navigation
+							span.icon-bar
+							span.icon-bar
+							span.icon-bar
+						a.navbar-brand(href='/#/', style='color:#ea1943')
+							b Student Fly
+					div#bs-example-navbar-collapse-1.collapse.navbar-collapse
+						ul.nav.navbar-nav
+							li
+								a(ng-href='#/job') Tuyển dụng
+							li
+								a(ng-href='#/blog') Bài viết
+							li
+								a(ng-href='#/research') Nghiên cứu khoa học
+
+						ul.nav.navbar-nav.navbar-right(style='padding-right:20px')
+							li.dropdown
+								a.dropdown-toggle.btn.btn-link(data-toggle='dropdown')
+									| Tâm Phạm
+									//- strong.caret
+								ul.dropdown-menu
+									li
+										a(href='#') Thông tin tài khoản
+									li
+										a(href='#') Quản lý bài viết
+									li
+										a(href='#') Quản lý profile
+									li.divider
+									li
+										a(href='#') Ứng tuyển
+
+						//- form.navbar-form.navbar-right(role='search')
+						//- 	.input-group
+						//- 		input.form-control(type='text')
+						//- 		span.input-group-btn
+						//- 			button.btn.btn-default(type='button') Go!
+							//- div.form-group
+							//- 	input.form-control(type='text')
+							//- button.btn.btn-default(type='submit') Tìm kiếm
+
+		//- #intro(style='margin-top:70px')
+		//- 	.content
+		//- 		.row
+		//- 			.col-md-8
+		//- 				img(src='/contents/images/vnwork.png', height='50')
+		//- 				.btn.btn-link(style='font-size:27px; color:#ea1943')
+		//- 					a(href='home.html') student fly
+
+		//- 				ul.nav.nav-pills
+		//- 					li.active
+		//- 						a(href='#/') Home
+		//- 					li
+		//- 						a(href='#/user') Profile
+		//- 					li
+		//- 						a(href='#/blog') Messages
+
+		//- #quotes
+		//- 	.content
+		//- 		p Nâng bước thành công với hơn 10.000 công việc trên hệ thống.
+		//- 		.input-group(style='margin-bottom:20px')
+		//- 			input.form-control(type='text', placeholder='Nhập chức danh, vị trí công việc...')
+		//- 			.input-group-btn
+		//- 				.btn.btn-success(style='width:140px') Tìm kiếm
+
+		#main.content
+			main(ng-view)
+
+		#footer
+			.content
+				label.label.label-youth YouthStd 2014
 
 		script(src='/bower_components/jquery/dist/jquery.min.js')
 		script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.js')
 		script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-animate.min.js')
 		script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-resource.min.js')
 		script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-route.min.js')
+		script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-sanitize.min.js')
+
+		script(src='bower_components/medium-editor/dist/js/medium-editor.js')
+
 		script(src='bower_components/bootstrap/dist/js/bootstrap.min.js')
 
 		script(src='/scripts.js')

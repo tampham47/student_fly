@@ -1,10 +1,43 @@
-p
-	| {{title}}
-p
-	| bài thơ đầu anh viết tặng em
-	br
-	| là bài thơ kể về đôi dép
-	br
-	| khi nỗi nhớ trong lòng da diết
-	br
-	| những vật tầm thường cũng viết thành thơ
+.row
+	.col-md-9
+		//- h4
+		//- 	label.label.label-danger Bài viết hướng nghiệp {{title}}
+		.page-header(style='margin-top:0px')
+			h2 Danh sách bài viết
+				a.btn.btn-success.pull-right(href='#/blog/new')
+					| Đăng bài viết
+
+		.media(ng-repeat='post in posts')
+			a.pull-left(href='#/blog/detail/{{post._id}}')
+				img.media-object(width='100', height='100', src='../contents/images/blog_default.jpg', alt='...')
+			.media-body
+				h4.media-heading
+					a(href='#/blog/detail/{{post._id}}')
+						| {{post.title}}
+					br
+					small Phạm Minh Tâm - {{post.modified | date:'MM/dd/yyyy @ h:mma'}}
+				p
+					| {{post.content | truncate:150}}
+
+		center
+			ul.pagination
+				li
+					a(href='#') «
+				li
+					a(href='#') 1
+				li
+					a(href='#') 2
+				li
+					a(href='#') 3
+				li
+					a(href='#') 4
+				li
+					a(href='#') 5
+				li
+					a(href='#') »
+
+	.col-md-3
+		//- .page-header(style='margin-top:0px')
+		//- 	h3 nổi bật
+		//- h4
+		//- 	label.label.label-success Nổi bật

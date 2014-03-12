@@ -1,0 +1,29 @@
+.row
+	.col-md-9
+		.page-header(style='margin-top:0px')
+			h2 Đăng bài viết
+
+		.post
+			form.form(role='form', method='post')
+				.form-group
+					label(for='exampleInputEmail1') Tên bài viết
+					input#exampleInputEmail1.form-control(type='text', ng-model='post.title')
+				.form-group
+					label(for='exampleInputEmail1') Nội dung
+					//- textarea.form-control(rows='12', ng-model='post.content')
+
+					div(style='min-height:200px; padding:4px; border-style:solid; border-width:2px; border-color:#e4e4e1',
+						ng-model='post.content', ng-meditor)
+
+				.form-group
+					button.btn.btn-success(ng-click='create()')
+						i.glyphicon.glyphicon-plus
+						| Đăng bài viết
+
+					a.btn.btn-default(href='#/blog')
+						i.glyphicon.glyphicon-remove
+						| Hủy
+
+	.col-md-3
+		//- h4
+		//- 	label.label.label-success Nổi bật

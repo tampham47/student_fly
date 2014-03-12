@@ -7,5 +7,5 @@ angular.module('student-fly.blog', [])
 		controller: 'BlogCtrl'
 		templateUrl: 'views/blog/index.jade'
 
-.controller 'BlogCtrl', ($scope, $location) ->
-	$scope.title = 'blog controller'
+.controller 'BlogCtrl', ($scope, $location, Post) ->
+	$scope.posts = Post.getByType({type: 'bai-viet'})
