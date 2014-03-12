@@ -9,3 +9,6 @@ angular.module('student-fly.blog', [])
 
 .controller 'BlogCtrl', ($scope, $location, Post) ->
 	$scope.posts = Post.getByType({type: 'bai-viet'})
+
+	$scope.search_panel = ->
+		$('#search-panel').fadeToggle 'fast'

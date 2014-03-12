@@ -12,6 +12,5 @@ angular.module('student-fly.blog')
 		type: 'bai-viet'
 
 	$scope.create = ->
-		# console.log $scope.post
 		Post.create $scope.post, ->
 			$location.path '/blog'

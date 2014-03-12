@@ -3,38 +3,47 @@
 		//- h4
 		//- 	label.label.label-danger Việc làm tốt nhất
 		.page-header(style='margin-top:0px')
-			h2 {{title}}
+			h2 Đăng tin tuyển dụng
 
 		.post
 			form.form(role='form', method='post')
 				.form-group
-					label(for='exampleInputEmail1') Tên bài viết
-					input#exampleInputEmail1.form-control(type='email', placeholder='Tên bài viết')
+					label(for='title') Tên bài viết
+					input.form-control#title(type='email', ng-model='post.title')
+
 				.form-group
-					label(for='exampleInputEmail1') Nội dung công việc
-					textarea.form-control(rows='7')
+					label(for='content') Nội dung công việc
+					textarea.form-control#content(rows='7', ng-model='post.content')
+
 				.form-group
-					label(for='exampleInputEmail1') Yêu cầu công việc
-					textarea.form-control(rows='7')
+					label(for='requirements') Yêu cầu công việc
+					textarea.form-control#requirements(rows='7', ng-model='post.requirements')
+
 				.form-group
-					label(for='exampleInputEmail1') Ngành nghề
-					input#exampleInputEmail1.form-control(type='email')
+					label(for='industry') Ngành nghề
+					input.form-control#industry(type='text', ng-model='post.industry')
+
 				.form-group
-					label(for='exampleInputEmail1') Địa điểm làm việc
-					input#exampleInputEmail1.form-control(type='email')
+					label(for='worksite') Địa điểm làm việc
+					input#worksite.form-control(type='text', ng-model='post.worksite')
+
 				.form-group
-					label(for='exampleInputEmail1') Mức lương
-					input#exampleInputEmail1.form-control(type='email')
+					label(for='salary') Mức lương
+					input#salary.form-control(type='text', ng-model='post.salary')
+
 				.form-group
-					label(for='exampleInputEmail1') Vị trí tuyển dụng
-					input#exampleInputEmail1.form-control(type='email')
+					label(for='position') Vị trí tuyển dụng
+					input#position.form-control(type='text', ng-model='post.position')
+
 				.form-group
-					label(for='exampleInputEmail1') Ngôn ngữ trình bày hồ sơ
-					input#exampleInputEmail1.form-control(type='email')
+					label(for='language-profile') Ngôn ngữ trình bày hồ sơ
+					input#language-profile.form-control(type='text', ng-model='language-profile')
+
 				.form-group
-					button.btn.btn-success
+					button.btn.btn-success(ng-click='create()')
 						i.glyphicon.glyphicon-plus
 						| Đăng tin tuyển dụng
+
 					a.btn.btn-default(href='#/job')
 						i.glyphicon.glyphicon-remove
 						| Hủy
