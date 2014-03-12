@@ -7,5 +7,5 @@ angular.module('student-fly.job', [])
 		controller: 'JobCtrl'
 		templateUrl: 'views/job/index.jade'
 
-.controller 'JobCtrl', ($scope, $location) ->
-	$scope.title = 'Danh sách tuyển dụng'
+.controller 'JobCtrl', ($scope, $location, Post) ->
+	$scope.posts = Post.getByType({type: 'tuyen-dung'})

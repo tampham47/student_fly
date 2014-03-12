@@ -10,6 +10,7 @@ angular.module('student-fly.job')
 .controller 'JobNewCtrl', ($scope, $location, Post) ->
 	$scope.post =
 		type: 'tuyen-dung'
+		carrer: {}
 
 	$scope.create = ->
 		Post.create $scope.post, ->

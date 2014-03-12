@@ -9,35 +9,39 @@
 			form.form(role='form', method='post')
 				.form-group
 					label(for='title') Tên bài viết
-					input.form-control#title(type='email', ng-model='post.title')
+					input.form-control#title(type='text', ng-model='post.title')
 
 				.form-group
 					label(for='content') Nội dung công việc
-					textarea.form-control#content(rows='7', ng-model='post.content')
+					div(style='min-height:200px; padding:4px; border-style:solid; border-width:2px; border-color:#e4e4e1',
+						ng-model='post.content', ng-meditor)
+					//- textarea.form-control#content(rows='7', ng-model='post.content')
 
 				.form-group
 					label(for='requirements') Yêu cầu công việc
-					textarea.form-control#requirements(rows='7', ng-model='post.requirements')
+					div(style='min-height:200px; padding:4px; border-style:solid; border-width:2px; border-color:#e4e4e1',
+						ng-model='post.carrer.requirements', ng-meditor)
+					//- textarea.form-control#requirements(rows='7', ng-model='post.carrer.requirements')
 
 				.form-group
 					label(for='industry') Ngành nghề
-					input.form-control#industry(type='text', ng-model='post.industry')
+					input.form-control#industry(type='text', ng-model='post.carrer.industry')
 
 				.form-group
 					label(for='worksite') Địa điểm làm việc
-					input#worksite.form-control(type='text', ng-model='post.worksite')
+					input#worksite.form-control(type='text', ng-model='post.carrer.worksite')
 
 				.form-group
 					label(for='salary') Mức lương
-					input#salary.form-control(type='text', ng-model='post.salary')
+					input#salary.form-control(type='text', ng-model='post.carrer.salary')
 
 				.form-group
 					label(for='position') Vị trí tuyển dụng
-					input#position.form-control(type='text', ng-model='post.position')
+					input#position.form-control(type='text', ng-model='post.carrer.position')
 
 				.form-group
 					label(for='language-profile') Ngôn ngữ trình bày hồ sơ
-					input#language-profile.form-control(type='text', ng-model='language-profile')
+					input#language-profile.form-control(type='text', ng-model='post.carrer.languageProfile')
 
 				.form-group
 					button.btn.btn-success(ng-click='create()')

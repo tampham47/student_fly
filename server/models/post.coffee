@@ -4,19 +4,33 @@ mongooes = require 'mongoose'
 Schema = mongooes.Schema
 
 PostSchema = new Schema
+	_user:
+		type: Schema.Types.ObjectId
+		ref: 'User'
+
 	title:
 		type: String
 
 	content:
 		type: String
 
-	_user:
-		type: Schema.Types.ObjectId
-		ref: 'User'
-
 	type:
 		type: String
-		enum: ['huong-nghiep', 'bai-viet', 'nghien-cuu']
+		enum: ['tuyen-dung', 'bai-viet', 'nghien-cuu']
+
+	carrer:
+		requirements:
+			type: String
+		industry:
+			type: String
+		worksite:
+			type: String
+		salary:
+			type: String
+		position:
+			type: String
+		languageProfile:
+			type: String
 
 	modified:
 		type: Date
