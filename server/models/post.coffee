@@ -4,6 +4,7 @@ mongooes = require 'mongoose'
 Schema = mongooes.Schema
 
 PostSchema = new Schema
+	# creator
 	_user:
 		type: Schema.Types.ObjectId
 		ref: 'User'
@@ -30,6 +31,12 @@ PostSchema = new Schema
 		position:
 			type: String
 		languageProfile:
+			type: String
+
+	research:
+		result:
+			type: String
+		linkResource:
 			type: String
 
 	modified:

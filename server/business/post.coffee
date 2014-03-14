@@ -3,6 +3,7 @@
 Post = require '../models/post'
 
 create = (data) ->
+	# create function always return a promise
 	Post.create(data)
 
 update = (id, data) ->

@@ -1,19 +1,19 @@
 'use strict'
 
-User = require '../models/user'
+UserResearch = require '../models/user-research'
 
 create = (data) ->
 	# create function always return a promise
-	User.create(data)
+	UserResearch.create(data)
 
 update = (id, data) ->
-	User.findByIdAndUpdate(id, data).exec()
+	UserResearch.findByIdAndUpdate(id, data).exec()
 
 getById = (id) ->
-	User.getById(id).exec()
+	UserResearch.getById(id).exec()
 
 getAll = ->
-	User.find({}).exec()
+	UserResearch.find({}).exec()
 
 
 module.exports = {

@@ -8,10 +8,11 @@
 		.post
 			form.form(role='form', method='post')
 				.form-group
-					label(for='exampleInputEmail1') Tên đề tài
-					input#exampleInputEmail1.form-control(type='email', placeholder='Tên bài viết')
+					label(for='title') Tên đề tài
+					input#title.form-control(type='text', ng-model='post.title')
+
 				.form-group
-					label(for='exampleInputEmail1') Người thực hiện
+					label(for='author') Người thực hiện
 					button.btn.btn-warning.btn-xs.pull-right
 						i.glyphicon.glyphicon-plus
 						| Thêm
@@ -26,18 +27,25 @@
 									a(href='#') Giáo viên hướng dẫn
 								li
 									a(href='#') Người thực hiện
-						// /btn-group
+
 				.form-group
-					label(for='exampleInputEmail1') Mô tả nghiên cứu
-					textarea.form-control(rows='6')
+					label(for='content') Mô tả nghiên cứu
+					//- textarea#content.form-control(rows='6', ng-model='post.content')
+					div(style='min-height:200px; padding:4px; border-style:solid; border-width:2px; border-color:#e4e4e1',
+						ng-model='post.content', ng-meditor)
+
 				.form-group
-					label(for='exampleInputEmail1') Kết quả đạt được
-					textarea.form-control(rows='6')
+					label(for='result') Kết quả đạt được
+					//- textarea#result.form-control(rows='6', ng-model='post.research.result')
+					div(style='min-height:200px; padding:4px; border-style:solid; border-width:2px; border-color:#e4e4e1',
+						ng-model='post.research.result', ng-meditor)
+
 				.form-group
-					label(for='exampleInputEmail1') Link báo cáo
-					input.form-control(rows='6')
+					label(for='linkResource') Link báo cáo
+					input#linkResource.form-control(rows='6', ng-model='post.research.linkResource')
+
 				.form-group
-					button.btn.btn-success
+					button.btn.btn-success(ng-click='create()')
 						i.glyphicon.glyphicon-plus
 						| Đăng kết quả nghiên cứu
 					a.btn.btn-default(href='#/research')

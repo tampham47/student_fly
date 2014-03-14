@@ -1,0 +1,41 @@
+.row
+	.col-md-8
+		.page-header(style='margin-top:0px')
+			h3 {{post.title}}
+			h4 Hồ chí minh - 13/3/2014
+			h4 Salary: $1000-$1500
+			h5 tags: Android, iOS
+
+		//- .company-info(style='background-color:#eaeaea; padding:10px')
+		//- 	.media
+		//- 		a.pull-left(href='#')
+		//- 			img.media-object(width='50', height='50', src='../contents/images/green.png', alt='...')
+		//- 		.media-body
+		//- 			h4.media-heading Citigo Software
+		//- 			h4
+		//- 				small Tầng 5 - Tòa nhà HTP - 434 Trần Khát Chân - Hai Bà Trưng - Hà Nội
+		//- 	p
+		//- 		| Citigo Software Ltd. is a software outsourcing company providing enterprise information services for companies worldwide. We specialize in building and implementing enterprise systems including ERP, CRM, SCM, CMS, etc. Our domain expertise lies in healthcare, retailer, logistics, finance and education. With a strong partner network, Citigo is serving hundreds of clients in the North America, Australia and European countries.
+		//- 		a(href='#') xem thêm
+
+		//- .page-header
+		h4 Mô Tả Công Việc
+		div(ng-bind-html='post.content')
+
+		//- .page-header
+		h4(style='margin-top:20px') Yêu cầu
+		div(ng-bind-html='post.carrer.requirements')
+
+
+	.col-md-4
+		.company-info(style='background-color:#eaeaea; padding:10px')
+			.media
+				a.pull-left(href='#')
+					img.media-object(width='50', height='50', src='../contents/images/green.png', alt='...')
+				.media-body
+					h4.media-heading Citigo Software
+					h4
+						small Tầng 5 - Tòa nhà HTP - 434 Trần Khát Chân - Hai Bà Trưng - Hà Nội
+			p
+				| Citigo Software Ltd. is a software outsourcing company providing enterprise information services for companies worldwide. We specialize in building and implementing enterprise systems including ERP, CRM, SCM, CMS, etc. Our domain expertise lies in healthcare, retailer, logistics, finance and education. With a strong partner network, Citigo is serving hundreds of clients in the North America, Australia and European countries.
+				a(href='#') xem thêm

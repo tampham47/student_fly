@@ -12,6 +12,6 @@ angular.module 'student-fly', [
 	'student-fly.user'
 
 	'student-fly.blog'
-	'student-fly.job'
+	'student-fly.carrer'
 	'student-fly.research'
 ]

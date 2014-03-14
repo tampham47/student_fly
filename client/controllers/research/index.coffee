@@ -7,5 +7,8 @@ angular.module('student-fly.research', [])
 		controller: 'ResearchCtrl'
 		templateUrl: 'views/research/index.jade'
 
-.controller 'ResearchCtrl', ($scope, $location) ->
-	$scope.title = 'Công trình nghiên cứu khoa học'
+.controller 'ResearchCtrl', ($scope, $location, Post) ->
+	$scope.posts = Post.getByType({type: 'nghien-cuu'})
+
+	$scope.search_panel = ->
+		$('#search-panel').fadeToggle 'fast'

@@ -7,5 +7,11 @@ angular.module('student-fly.research')
 		controller: 'ResearchNewCtrl'
 		templateUrl: 'views/research/new.jade'
 
-.controller 'ResearchNewCtrl', ($scope, $location) ->
-	$scope.title = 'research controller'
+.controller 'ResearchNewCtrl', ($scope, $location, Post) ->
+	$scope.post =
+		type: 'nghien-cuu'
+		research: {}
+
+	$scope.create = ->
+		Post.create $scope.post, ->
+			$location.path '/research'
