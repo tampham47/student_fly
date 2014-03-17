@@ -13,15 +13,11 @@
 
 				.form-group
 					label(for='content') Nội dung công việc
-					div(style='min-height:200px; padding:4px; border-style:solid; border-width:2px; border-color:#e4e4e1',
-						ng-model='post.content', ng-meditor)
-					//- textarea.form-control#content(rows='7', ng-model='post.content')
+					div.textarea(ng-model='post.content', ng-meditor)
 
 				.form-group
 					label(for='requirements') Yêu cầu công việc
-					div(style='min-height:200px; padding:4px; border-style:solid; border-width:2px; border-color:#e4e4e1',
-						ng-model='post.carrer.requirements', ng-meditor)
-					//- textarea.form-control#requirements(rows='7', ng-model='post.carrer.requirements')
+					div.textarea(ng-model='post.carrer.requirements', ng-meditor)
 
 				.form-group
 					label(for='industry') Ngành nghề
@@ -48,7 +44,7 @@
 						i.glyphicon.glyphicon-plus
 						| Đăng tin tuyển dụng
 
-					a.btn.btn-default(href='#/job')
+					a.btn.btn-default(href='#/carrer')
 						i.glyphicon.glyphicon-remove
 						| Hủy
 

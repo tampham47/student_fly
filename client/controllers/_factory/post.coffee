@@ -19,3 +19,7 @@ angular.module('student-fly')
 			method: 'GET'
 			isArray: true
 			params: cmd: 'getByType'
+		getByTypeAndPaging:
+			method: 'GET'
+			isArray: false
+			params: cmd: 'getByTypeAndPaging'

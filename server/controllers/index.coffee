@@ -12,5 +12,7 @@ allowCors = (request, response, next) ->
 module.exports = (app) ->
 	app.all '*', allowCors
 
-	# require('./user')(app)
+	require('./user')(app)
 	require('./post')(app)
+	require('./comment')(app)
+

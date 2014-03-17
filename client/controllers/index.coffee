@@ -8,6 +8,8 @@ angular.module 'student-fly', [
 	'ngSanitize'
 
 	'student-fly.templates'
+	'student-fly.comment'
+
 	'student-fly.home'
 	'student-fly.user'
 

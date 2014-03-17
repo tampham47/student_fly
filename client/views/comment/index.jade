@@ -1,0 +1,24 @@
+div(ng-controller='comment-ctrl')
+	.media(ng-repeat='comment in comments')
+		a.pull-left(href='#')
+			img.img-rounded.media-object(width='50', height='50',
+				src='../bower_components/_images/green.png', alt='...')
+		.media-body
+			h5.media-heading
+				b Tâm Phạm
+				small  {{comment.modified | date:'MM/dd/yyyy @ h:mma'}}
+			span(ng-bind-html='comment.content')
+
+	.media
+		a.pull-left(href='#')
+			img.img-rounded.media-object(width='50', height='50',
+				src='../bower_components/_images/green.png', alt='...')
+		.media-body
+			h5.media-heading
+				b Tâm Phạm
+			form(role='form')
+				.form-group
+					div.textarea#comment_area(style='min-height:50px',
+						ng-model='comment.content', ng-meditor)
+					button.btn.btn-success.pull-right(style='margin-top:4px',
+						ng-click='create()') Bình luận

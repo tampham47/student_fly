@@ -29,9 +29,10 @@
 					button#search.btn.btn-primary.pull-right(name='search') Tìm kiếm
 					button#cancel.btn.btn-default.pull-right(name='cancel', ng-click='search_panel()') Hủy
 
-		.media(ng-repeat='post in posts')
+		.media(ng-repeat='post in model.data')
 			a.pull-left(href='#/research/detail/{{post._id}}')
-				img.img-rounded.media-object(width='100', height='100', src='../contents/images/research_default.png', alt='...')
+				img.img-rounded.media-object(width='100', height='100',
+					src='../bower_components/_images/research_default.png', alt='...')
 			.media-body
 				h4.media-heading
 					a(href='#/research/detail/{{post._id}}')
@@ -41,22 +42,23 @@
 				p
 					| {{post.content | truncate:150}}
 
-		center
-			ul.pagination
-				li
-					a(href='#') «
-				li
-					a(href='#') 1
-				li
-					a(href='#') 2
-				li
-					a(href='#') 3
-				li
-					a(href='#') 4
-				li
-					a(href='#') 5
-				li
-					a(href='#') »
+		center(style='margin-top:20px')
+			div.btn-group.btn-group-justified(style='width:220px')
+				div.btn-group
+					button.btn.btn-default(type='button', ng-click='prev_page()', ng-if='current_page > 0')
+						i.glyphicon.glyphicon-chevron-left
+						| trang trước
+					button.btn.btn-default(type='button', ng-if='current_page <= 0', disabled='disabled')
+						i.glyphicon.glyphicon-chevron-left
+						| trang trước
+
+				div.btn-group
+					button.btn.btn-default(type='button', ng-click='next_page()', ng-if='is_next_page() == true')
+						| trang sau
+						i.glyphicon.glyphicon-chevron-right
+					button.btn.btn-default(type='button', ng-if='is_next_page() == false', disabled='disabled')
+						| trang sau
+						i.glyphicon.glyphicon-chevron-right
 	.col-md-3
 		//- h4
 		//- 	label.label.label-success Nổi bật

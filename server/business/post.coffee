@@ -18,8 +18,30 @@ getAll = ->
 getByType = (type) ->
 	Post.find({type: type}).sort({modified: -1}).exec()
 
+countAll = (type) ->
+	Post.count({type: type}).exec()
+
+getByTypeAndPaging= (type, current_page, items_per_page) ->
+	model = {}
+	Post.find({type: type})
+	.sort({modified: -1})
+	.skip(current_page * items_per_page)
+	.limit(items_per_page).exec()
+	.then (data) ->
+		model.data = data
+		countAll type
+	.then (items) ->
+		model.all_items = items
+		model.highest_page = Math.round(items/items_per_page)
+		if (model.highest_page * items_per_page) < items
+			model.highest_page = model.highest_page + 1
+		model.highest_page = model.highest_page - 1
+
+		model
+
 
 module.exports = {
 	create, update,
-	getById, getAll, getByType
+	getById, getAll, getByType, getByTypeAndPaging,
+	countAll
 }
