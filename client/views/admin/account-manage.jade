@@ -1,0 +1,44 @@
+.page-header(style='margin-top:0px')
+	h3
+		| Quản lý tài khoản
+
+		// Single button
+		div.btn-group.pull-right
+			button.btn.btn-success.dropdown-toggle(type='button', data-toggle='dropdown')
+				| Loại tài khoản
+				span.caret
+			ul.dropdown-menu(role='menu')
+				li
+					a(href='#') Admin cấp nhà trường
+				li
+					a(href='#') Nhà trường
+				li
+					a(href='#') Doanh nghiệp
+				li
+					a(href='#') Giáo viên
+				li
+					a(href='#') Sinh viên, Cựu SV
+
+		//- div.btn.btn-link.pull-right Tìm kiếm
+		button.btn.btn-link.pull-right()
+			i.glyphicon.glyphicon-search
+
+div.media(ng-repeat='item in [0,1,2,3,4,5,6,7]')
+	a.pull-left(href='#')
+		img.img-rounded.media-object(src='http://lorempixel.com/64/64/', alt='')
+	div.media-body
+		h4.media-heading
+			| Phạm Minh Tâm {{item}}
+		| Email: tampham47-{{item}}@live.com
+		br
+		| MSSV: 09520434-{{item}}
+
+
+center
+	ul.pagination
+		li
+			a(href='#') «
+		li(ng-repeat='item in [1,2,3,4,5]')
+			a(href='#') {{item}}
+		li
+			a(href='#') »

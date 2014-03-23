@@ -1,0 +1,19 @@
+.row
+	.col-md-3.col-md-offset-1
+		div.list-group
+			a.list-group-item.active(ng-click='nav("account-manage.jade")',
+				ng-href='#/admin') Quản lý tài khoản
+			a.list-group-item(ng-click='nav("post-manage.jade")',
+				ng-href='#/admin') Quản lý bài viết
+			a.list-group-item(ng-click='nav("online-surveys.jade")',
+				ng-href='#/admin') Khảo sát trực tuyến
+			a.list-group-item(ng-click='nav("statistics.jade")',
+				ng-href='#/admin') Thống kê hệ thống
+			a.list-group-item(ng-click='nav("feedback.jade")',
+				ng-href='#/admin') Ý kiến phản hồi
+
+
+	.col-md-7(ng-include='template')
+		//- .page-header(style='margin-top:0px')
+		//- 	h1 {{title}}
+

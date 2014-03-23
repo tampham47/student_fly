@@ -16,7 +16,7 @@ html(ng-app='student-fly')
 		link(rel='stylesheet', href='/bower_components/_contents/studentfly.css')
 		link(rel='stylesheet', href='/bower_components/_contents/style.css')
 
-	body(style='padding-top:60px')
+	body(style='padding:60px 30px;')
 
 		//- include login
 
@@ -89,8 +89,9 @@ html(ng-app='student-fly')
 		//- 			.input-group-btn
 		//- 				.btn.btn-success(style='width:140px') Tìm kiếm
 
-		#main.content
+		//- #main.content
 			main(ng-view)
+		div(ng-view)
 
 		#footer
 			.content

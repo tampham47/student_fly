@@ -9,3 +9,4 @@ angular.module('student-fly.home', [])
 
 .controller 'HomeCtrl', ($scope, $location) ->
 	$scope.title = 'phạm minh tâm'
+

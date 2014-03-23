@@ -10,3 +10,7 @@ angular.module('student-fly')
 			# scope.$on '$routeChangeSuccess', ->
 				$('li', $(this).parent().parent()).removeClass 'active'
 				$(this).parent().addClass 'active'
+
+				# other case
+				$('a', $(this).parent().parent()).removeClass 'active'
+				$(this).addClass 'active'

@@ -1,15 +1,14 @@
 .row
-	.col-md-9
+	.col-md-7.col-md-offset-1
 		//- h4
 		//- 	label.label.label-danger Việc làm tốt nhất
 		.page-header(style='margin-top:0px')
 			h2 Danh sách tuyển dụng
-				button.btn.btn-default.pull-right(ng-click='search_panel()')
-					i.glyphicon.glyphicon-search
-
 				a.btn.btn-success.pull-right(href='#/carrer/new')
 					i.glyphicon.glyphicon-plus
 					| Tạo mới
+				button.btn.btn-link.pull-right(ng-click='search_panel()')
+					i.glyphicon.glyphicon-search
 
 		form.form-horizontal#search-panel(style='display:none')
 			// Text input
@@ -32,7 +31,7 @@
 				label.col-md-3.control-label(for='search')
 				.col-md-9
 					button#search.btn.btn-primary.pull-right(name='search') Tìm kiếm
-					button#cancel.btn.btn-default.pull-right(name='cancel', ng-click='search_panel()') Hủy
+					button#cancel.btn.btn-link.pull-right(name='cancel', ng-click='search_panel()') Hủy
 
 
 		.media(ng-repeat='post in model.data')
