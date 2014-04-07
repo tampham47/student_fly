@@ -1,0 +1,26 @@
+div(ng-controller='account-new-ctrl')
+	.page-header(style='margin-top:0px')
+		small
+			ul.nav.nav-pills.pull-right
+				li.active
+					a(ng-href='#/admin', ng-click='nav("views/account/create.jade")') Tạo mới
+				li
+					a(ng-href='#/admin', ng-click='nav("views/account/import.jade")') Import
+
+		h3
+			| Tài khoản
+
+
+			// Create
+			//- button.btn.btn-link.pull-right(ng-click='nav("views/account/create.jade")')
+			//- 	//- i.glyphicon.glyphicon-plus
+			//- 	| Tạo tài khoản
+
+			//- // Import
+			//- button.btn.btn-link.pull-right(ng-click='nav("views/account/import.jade")')
+			//- 	//- i.glyphicon.glyphicon-plus
+			//- 	| Import tài khoản
+
+
+
+	div(ng-include='account_template')

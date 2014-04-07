@@ -1,0 +1,17 @@
+div.list-group
+	a.list-group-item.list-group-item-success()
+		h4.list-group-item-heading Phạm Minh Tâm
+		p.list-group-item-text System admin
+
+	a.list-group-item.list-group-item-info.active(ng-click='nav("account-manage.jade")',
+		ng-href='#/admin') Quản lý tài khoản
+	a.list-group-item.list-group-item-info(ng-click='nav("account-create.jade")',
+		ng-href='#/admin') Tạo tài khoản
+	a.list-group-item.list-group-item-info(ng-click='nav("post-manage.jade")',
+		ng-href='#/admin') Quản lý bài viết
+	a.list-group-item.list-group-item-info(ng-click='nav("online-surveys.jade")',
+		ng-href='#/admin') Khảo sát trực tuyến
+	a.list-group-item.list-group-item-info(ng-click='nav("statistics.jade")',
+		ng-href='#/admin') Thống kê hệ thống
+	a.list-group-item.list-group-item-info(ng-click='nav("feedback.jade")',
+		ng-href='#/admin') Ý kiến phản hồi

@@ -1,19 +1,27 @@
 .row
-	.col-md-3.col-md-offset-1
+	.col-md-7.col-md-offset-1(ng-include='template')
+		//- content here
+
+	.col-md-3
 		div.list-group
-			a.list-group-item.active(ng-click='nav("account-manage.jade")',
-				ng-href='#/admin') Quản lý tài khoản
-			a.list-group-item(ng-click='nav("post-manage.jade")',
-				ng-href='#/admin') Quản lý bài viết
-			a.list-group-item(ng-click='nav("online-surveys.jade")',
-				ng-href='#/admin') Khảo sát trực tuyến
-			a.list-group-item(ng-click='nav("statistics.jade")',
-				ng-href='#/admin') Thống kê hệ thống
-			a.list-group-item(ng-click='nav("feedback.jade")',
-				ng-href='#/admin') Ý kiến phản hồi
+			a.list-group-item.list-group-item-success()
+				h4.list-group-item-heading Phạm Minh Tâm
+				p.list-group-item-text System admin
 
+			a.list-group-item.list-group-item-info.active(ng-href='#/admin',
+				ng-click='nav("views/account/index.jade")') Quản lý tài khoản
+			//- a.list-group-item.list-group-item-info(ng-href='#/admin',
+			//- 	ng-click='nav("views/account/create.jade")') Tạo tài khoản
+			//- a.list-group-item.list-group-item-info(ng-href='#/admin',
+			//- 	ng-click='nav("views/account/import.jade")') Import tài khoản
+			a.list-group-item.list-group-item-info(ng-href='#/admin',
+				ng-click='nav("views/account/new.jade")') Tạo tài khoản
 
-	.col-md-7(ng-include='template')
-		//- .page-header(style='margin-top:0px')
-		//- 	h1 {{title}}
-
+			a.list-group-item.list-group-item-info(ng-href='#/admin',
+				ng-click='nav("views/admin/post-manage.jade")') Quản lý bài viết
+			a.list-group-item.list-group-item-info(ng-href='#/admin',
+				ng-click='nav("views/admin/online-surveys.jade")') Khảo sát trực tuyến
+			a.list-group-item.list-group-item-info(ng-href='#/admin',
+				ng-click='nav("views/admin/statistics.jade")') Thống kê hệ thống
+			a.list-group-item.list-group-item-info(ng-href='#/admin',
+				ng-click='nav("views/admin/feedback.jade")') Ý kiến phản hồi

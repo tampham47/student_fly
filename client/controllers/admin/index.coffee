@@ -9,7 +9,8 @@ angular.module('student-fly.admin', [])
 
 .controller 'admin-ctrl', ($scope, $location) ->
 	$scope.title = 'admin-ctrl'
-	$scope.template = 'views/admin/account-manage.jade'
+	$scope.template = 'views/account/index.jade'
 
 	$scope.nav = (template) ->
-		$scope.template = 'views/admin/' + template
+		# $scope.template = 'views/admin/' + template
+		$scope.template = template

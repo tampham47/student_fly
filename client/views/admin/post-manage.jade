@@ -1,2 +1,59 @@
-.page-header(style='margin-top:0px')
-	h3 Quản lý bài viết
+div(ng-controller='admin-post-manage-ctrl')
+	.page-header(style='margin-top:0px')
+		h3 Quản lý bài viết
+
+			//- Quản lý thông tin hiển thị
+			//- div.btn-group.pull-right
+				button.btn.btn-default(type='button') on
+				button.btn.btn-default(type='button') off
+
+			// Single button
+			div.btn-group.pull-right
+				button.btn.btn-success.dropdown-toggle(type='button', data-toggle='dropdown')
+					| Loại bài viết
+					span.caret
+				ul.dropdown-menu(role='menu')
+					li
+						a(href='#') Tuyển dụng
+					li
+						a(href='#') Hướng nghiệp
+					li
+						a(href='#') Nghiên cứu khoa học
+
+			// Tìm kiếm
+			button.btn.btn-link.pull-right(ng-click='search_panel()')
+				i.glyphicon.glyphicon-search
+
+	form.form-horizontal#search-panel(style='display:none')
+		// Button Drop Down
+		.form-group
+			label.col-md-3.control-label(for='buttondropdown') Người dùng
+			.col-md-9
+				input#buttondropdown.form-control.input-md(name='searchinput', type='search', placeholder='placeholder')
+
+		// Search input
+		.form-group
+			label.col-md-3.control-label(for='searchinput') Từ khóa
+			.col-md-9
+				input#searchinput.form-control.input-md(name='searchinput', type='search', placeholder='placeholder')
+
+		// Button (Double)
+		.form-group
+			label.col-md-3.control-label(for='button1id')
+			.col-md-9
+				button#button2id.btn.btn-primary.pull-right(name='button2id') Tìm kiếm
+				button#button1id.btn.btn-link.pull-right(name='button1id', ng-click='search_panel()') Hủy
+
+	.media(ng-repeat='post in model.data')
+		.btn.btn-danger.btn-sm.pull-right disable
+		a.pull-left(href='#/blog/detail/{{post._id}}')
+			img.img-rounded.media-object(width='100', height='100',
+				src='../bower_components/_images/blog_default.jpg', alt='...')
+		.media-body
+			h4.media-heading
+				a(href='#/blog/detail/{{post._id}}')
+					| {{post.title}}
+				br
+				small Phạm Minh Tâm - {{post.modified | date:'MM/dd/yyyy @ h:mma'}}
+			p
+				| {{post.content | truncate:150}}

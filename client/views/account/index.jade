@@ -1,0 +1,81 @@
+div(ng-controller='account-ctrl')
+	.page-header(style='margin-top:0px')
+		h3
+			| Quản lý tài khoản
+
+			// Single button
+			div.btn-group.pull-right
+				button.btn.btn-success.dropdown-toggle(type='button', data-toggle='dropdown')
+					| Loại tài khoản
+					span.caret
+				ul.dropdown-menu(role='menu')
+					li
+						a(href='#') Admin cấp nhà trường
+					li
+						a(href='#') Nhà trường
+					li
+						a(href='#') Doanh nghiệp
+					li
+						a(href='#') Giáo viên
+					li
+						a(href='#') Sinh viên, Cựu SV
+
+			// Tạo mới
+			//- button.btn.btn-link.pull-right
+				//- i.glyphicon.glyphicon-plus
+				| Tạo tài khoản
+
+			//- div.btn.btn-link.pull-right Tìm kiếm
+			button.btn.btn-link.pull-right(ng-click='search_panel()')
+				i.glyphicon.glyphicon-search
+
+
+	form.form-horizontal#search-panel(style='display:none')
+		.form-group
+			label.col-md-3.control-label(for='role') Loại tài khoản
+			.col-md-9
+				select#role.form-control(name='role')
+					option(value='1') Nhà Trường
+					option(value='2') Doanh Nghiệp
+					option(value='3') Giáo Viên
+					option(value='4') Sinh Viên
+		// Button Drop Down
+		.form-group
+			label.col-md-3.control-label(for='buttondropdown') Người dùng
+			.col-md-9
+				input#buttondropdown.form-control.input-md(name='searchinput', type='search', placeholder='placeholder')
+
+		// Search input
+		.form-group
+			label.col-md-3.control-label(for='searchinput') Từ khóa
+			.col-md-9
+				input#searchinput.form-control.input-md(name='searchinput', type='search', placeholder='placeholder')
+
+		// Button (Double)
+		.form-group
+			label.col-md-3.control-label(for='button1id')
+			.col-md-9
+				button#button2id.btn.btn-primary.pull-right(name='button2id') Tìm kiếm
+				button#button1id.btn.btn-link.pull-right(name='button1id', ng-click='search_panel()') Hủy
+
+
+	div.media(ng-repeat='item in [0,1,2,3,4,5,6,7]')
+		.btn.btn-danger.btn-sm.pull-right block
+		a.pull-left(href='#')
+			img.img-rounded.media-object(src='http://lorempixel.com/64/64/', alt='')
+		div.media-body
+			h4.media-heading
+				| Phạm Minh Tâm {{item}}
+			| Email: tampham47-{{item}}@live.com
+			br
+			| MSSV: 09520434-{{item}}
+
+
+	center
+		ul.pagination
+			li
+				a(href='#') «
+			li(ng-repeat='item in [1,2,3,4,5]')
+				a(href='#') {{item}}
+			li
+				a(href='#') »

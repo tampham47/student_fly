@@ -1,0 +1,44 @@
+div(ng-controller='account-create-ctrl')
+	//- .page-header(style='margin-top:0px')
+		h3
+			| Tạo tài khoản
+
+			// Import
+			//- button.btn.btn-link.pull-right
+				//- i.glyphicon.glyphicon-plus
+				| Import tài khoản
+
+	form.form-horizontal
+		// Select Basic
+		.form-group
+			label.col-md-3.control-label(for='role') Loại tài khoản
+			.col-md-9
+				select#role.form-control(name='role')
+					option(value='1') Nhà Trường
+					option(value='2') Doanh Nghiệp
+					option(value='3') Giáo Viên
+					option(value='4') Sinh Viên
+		// Text input
+		.form-group
+			label.col-md-3.control-label(for='email') Email
+			.col-md-9
+				input#email.form-control.input-md(name='email', type='text', placeholder='', required='')
+
+		// Password input
+		.form-group
+			label.col-md-3.control-label(for='password') Password
+			.col-md-9
+				.input-group
+					input#password.form-control(name='password', type='text', placeholder='', required='')
+					span.input-group-addon
+						input#password_checkbox(type='checkbox', style='margin-top:2px')
+						label(for='password_checkbox', style='margin-bottom:0px')
+							| Tự tạo mật khẩu
+				span.help-block Thông tin tài khoản sẽ được gởi tới email tương ứng.
+
+		// Button (Double)
+		.form-group
+			label.col-md-3.control-label(for='btn_ok')
+			.col-md-9
+				button#btn_ok.btn.btn-success(name='btn_ok') Tạo tài khoản
+				button#btn_cancel.btn.btn-link(name='btn_cancel') Hủy

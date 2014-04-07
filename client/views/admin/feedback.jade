@@ -1,2 +1,12 @@
-.page-header(style='margin-top:0px')
-	h3 Ý kiến phản hồi
+div(ng-controller='admin-feedback-ctrl')
+	.page-header(style='margin-top:0px')
+		h3 Ý kiến phản hồi
+
+	div.media(ng-repeat='item in [0,1,2,3,4,5,6,7]')
+		a.pull-left(href='#')
+			img.img-rounded.media-object(src='http://lorempixel.com/64/64/', alt='')
+		div.media-body
+			h4.media-heading
+				| Phạm Minh Tâm
+				small  - 20/03/2014
+			| This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.

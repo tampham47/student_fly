@@ -1,0 +1,24 @@
+div(ng-controller='account-import-ctrl')
+	//- .page-header(style='margin-top:0px')
+		h3
+			| Import tài khoản
+
+			// Import
+			//- button.btn.btn-link.pull-right
+				//- i.glyphicon.glyphicon-plus
+				| Import tài khoản
+
+
+	form.form-horizontal
+		// File Button
+		.form-group
+			label.col-md-3.control-label(for='file_upload') File Upload
+			.col-md-9
+				input#file_upload.input-file(name='file_upload', type='file')
+		// Button (Double)
+		.form-group
+			label.col-md-3.control-label(for='btn_import')
+			.col-md-9
+				button#btn_import.btn.btn-success(name='btn_import') Import
+				button#btn_cancel.btn.btn-link(name='btn_cancel') Hủy
+

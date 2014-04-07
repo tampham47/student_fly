@@ -9,8 +9,9 @@ angular.module 'student-fly', [
 
 	'student-fly.templates'
 	'student-fly.admin'
-	'student-fly.home'
+	'student-fly.account'
 
+	'student-fly.home'
 	'student-fly.comment'
 	'student-fly.user'
 	'student-fly.blog'
